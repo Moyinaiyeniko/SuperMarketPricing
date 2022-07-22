@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="kata.supermarket.BasketTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-07-22T14:29:29" hostname="MOYIN" time="0.104">
+  <properties/>
+  <testcase name="no items" classname="kata.supermarket.BasketTest" time="0.063"/>
+  <testcase name="a single item priced per unit" classname="kata.supermarket.BasketTest" time="0.003"/>
+  <testcase name="multiple items priced per unit" classname="kata.supermarket.BasketTest" time="0.003"/>
+  <testcase name="a single weighed item" classname="kata.supermarket.BasketTest" time="0.002"/>
+  <testcase name="multiple weighed items" classname="kata.supermarket.BasketTest" time="0.018"/>
+  <system-out><![CDATA[subtotalcalc0.00
+product total0
+disc0.00
+final total0.00
+subtotalcalc0.00
+product total0
+disc0.00
+subtotalcalc0.49
+product total0.49
+disc0.00
+final total0.49
+subtotalcalc0.49
+product total0.49
+disc0.00
+subtotalcalc2.04
+product total2.04
+disc0.00
+final total2.04
+subtotalcalc2.04
+product total2.04
+disc0.00
+subtotalcalc1.25
+product total1.25
+disc0.00
+final total1.25
+subtotalcalc1.25
+product total1.25
+disc0.00
+subtotalcalc1.85
+product total1.85
+disc0.00
+final total1.85
+subtotalcalc1.85
+product total1.85
+disc0.00
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

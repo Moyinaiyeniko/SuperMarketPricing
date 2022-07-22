@@ -15,12 +15,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class BasketTest {
 
     @DisplayName("basket provides its total value when containing...")
-    @MethodSource
+    @MethodSource("basketProvidesTotalValue")
     @ParameterizedTest(name = "{0}")
     void basketProvidesTotalValue(String description, String expectedTotal, Iterable<Item> items) {
         final Basket basket = new Basket();
         items.forEach(basket::add);
-        assertEquals(new BigDecimal(expectedTotal), basket.total());
+        assertEquals(new BigDecimal(expectedTotal), new TotalCalculator().calculateTotal(basket));
     }
 
     static Stream<Arguments> basketProvidesTotalValue() {
@@ -52,8 +52,16 @@ class BasketTest {
         return Arguments.of("a single item priced per unit", "0.49", Collections.singleton(aPintOfMilk()));
     }
 
+    private static Arguments buyOneGetFreePerUnit(){
+        return Arguments.of("buy one get one free unit discount","BOGO",Collections.singleton(buyOneGetOneFree()));
+    }
+
     private static Arguments noItems() {
         return Arguments.of("no items", "0.00", Collections.emptyList());
+    }
+
+    private static Discount buyOneGetOneFree(){
+        return new Discount("BOGO");
     }
 
     private static Item aPintOfMilk() {
@@ -64,7 +72,7 @@ class BasketTest {
         return new Product(new BigDecimal("1.55")).oneOf();
     }
 
-    private static WeighedProduct aKiloOfAmericanSweets() {
+    private static WeighedProduct  aKiloOfAmericanSweets() {
         return new WeighedProduct(new BigDecimal("4.99"));
     }
 
